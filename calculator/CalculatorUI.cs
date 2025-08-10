@@ -1,8 +1,8 @@
 namespace calculator
 {
-    public partial class DisplayController : Form
+    public partial class CalculatorUI : Form
     {
-        public DisplayController()
+        public CalculatorUI()
         {
             InitializeComponent();
         }

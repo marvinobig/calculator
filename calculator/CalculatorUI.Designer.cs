@@ -1,6 +1,6 @@
 ﻿namespace calculator
 {
-    partial class DisplayController
+    partial class CalculatorUI
     {
         /// <summary>
         ///  Required designer variable.
