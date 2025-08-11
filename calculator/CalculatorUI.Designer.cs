@@ -135,6 +135,7 @@
             AdditionButton.TabIndex = 12;
             AdditionButton.Text = "+";
             AdditionButton.UseVisualStyleBackColor = true;
+            AdditionButton.Click += AdditionButton_Click;
             // 
             // DecimalButton
             // 
@@ -252,8 +253,9 @@
             SumButton.TabIndex = 18;
             SumButton.Text = "=";
             SumButton.UseVisualStyleBackColor = true;
+            SumButton.Click += SumButton_Click;
             // 
-            // DisplayController
+            // CalculatorUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -279,7 +281,7 @@
             Controls.Add(display);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "DisplayController";
+            Name = "CalculatorUI";
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();

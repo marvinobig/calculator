@@ -2,6 +2,8 @@ namespace calculator
 {
     public partial class CalculatorUI : Form
     {
+        private OperationsController operations = new();
+
         public CalculatorUI()
         {
             InitializeComponent();
@@ -9,64 +11,65 @@ namespace calculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            display.Text = display.Text + "1";
+            display.Text += "1";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            display.Text = display.Text + "2";
+            display.Text += "2";
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            display.Text = display.Text + "3";
+            display.Text += "3";
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            display.Text = display.Text + "4";
+            display.Text += "4";
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            display.Text = display.Text + "5";
+            display.Text += "5";
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            display.Text = display.Text + "6";
+            display.Text += "6";
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            display.Text = display.Text + "7";
+            display.Text += "7";
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            display.Text = display.Text + "8";
+            display.Text += "8";
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            display.Text = display.Text + "9";
+            display.Text += "9";
         }
 
         private void button0_Click(object sender, EventArgs e)
         {
-            display.Text = display.Text + "0";
+            display.Text += "0";
         }
 
         private void DecimalButton_Click(object sender, EventArgs e)
         {
-            display.Text = display.Text + ".";
+            // add logic to prevent adding a decimal point unless a number is present
+            display.Text += ".";
         }
 
         private void DelButton_Click(object sender, EventArgs e)
         {
             if (display.TextLength > 0)
             {
-                display.Text = display.Text.Remove((display.TextLength - 1));
+                display.Text = display.Text.Remove(display.TextLength - 1);
             }
         }
 
@@ -75,6 +78,22 @@ namespace calculator
             if (display.TextLength > 0)
             {
                 display.Text = "";
+            }
+        }
+
+        private void AdditionButton_Click(object sender, EventArgs e)
+        {
+            if ((!display.Text.Contains('+') || !display.Text.Contains('-') || !display.Text.Contains('÷') || !display.Text.Contains('×')) && display.Text.Any(char.IsDigit))
+            {
+                display.Text += "+";
+            }
+        }
+
+        private void SumButton_Click(object sender, EventArgs e)
+        {
+            if ((display.Text.Contains('+') || display.Text.Contains('-') || display.Text.Contains('÷') || display.Text.Contains('×')))
+            {
+                display.Text = operations.Addition(display.Text);
             }
         }
     }
