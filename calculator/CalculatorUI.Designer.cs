@@ -52,7 +52,7 @@
             // display
             // 
             display.BorderStyle = BorderStyle.FixedSingle;
-            display.Font = new Font("Segoe UI", 16F);
+            display.Font = new Font("Segoe UI", 20F);
             display.Location = new Point(12, 12);
             display.Multiline = true;
             display.Name = "display";
@@ -211,6 +211,7 @@
             MinusButton.TabIndex = 14;
             MinusButton.Text = "-";
             MinusButton.UseVisualStyleBackColor = true;
+            MinusButton.Click += MinusButton_Click;
             // 
             // MultiplicationButton
             // 

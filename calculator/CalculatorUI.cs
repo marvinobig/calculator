@@ -83,9 +83,17 @@ namespace calculator
 
         private void AdditionButton_Click(object sender, EventArgs e)
         {
-            if ((!display.Text.Contains('+') && !display.Text.Contains('-') && !display.Text.Contains('÷') && !display.Text.Contains('×')) && display.Text.Any(char.IsDigit))
+            if (operations.OperatorDoesNotExistInDisplay(display.Text))
             {
                 display.Text += "+";
+            }
+        }
+
+        private void MinusButton_Click(object sender, EventArgs e)
+        {
+            if (operations.OperatorDoesNotExistInDisplay(display.Text))
+            {
+                display.Text += "-";
             }
         }
 
@@ -94,6 +102,10 @@ namespace calculator
             if (display.Text.Contains('+'))
             {
                 display.Text = operations.Addition(display.Text);
+            }
+            else if (display.Text.Contains('-'))
+            {
+                display.Text = operations.Subtraction(display.Text);
             }
         }
     }
